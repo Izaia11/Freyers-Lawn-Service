@@ -4,133 +4,88 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Schedule – Freyer's Lawn Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Roboto', sans-serif;
-      font-weight: bold;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #0a0a0a, #1b5e20);
-      color: #ffffff;
+      background: linear-gradient(to bottom, #a5d6a7, #2e7d32, #000);
+      color: white;
+      font-weight: bold;
+      padding: 2rem;
     }
-
     header {
-      background: linear-gradient(to right, #1b5e20, #2e7d32);
       text-align: center;
-      padding: 2rem 1rem;
+      margin-bottom: 2rem;
     }
-
     header img {
-      height: 80px;
-      margin-bottom: 1rem;
+      height: 70px;
     }
-
-    h1 {
+    h1, h2 {
       text-align: center;
-      color: #a5d6a7;
-      margin-top: 2rem;
     }
-
-    p {
-      text-align: center;
-      color: #c8e6c9;
-    }
-
     table {
-      width: 90%;
-      max-width: 900px;
-      margin: 2rem auto;
+      width: 100%;
       border-collapse: collapse;
-      background: rgba(255, 255, 255, 0.05);
+      margin-bottom: 3rem;
     }
-
     th, td {
       border: 1px solid #81c784;
-      padding: 1rem;
       text-align: center;
+      padding: 1rem;
     }
-
     th {
-      background-color: #2e7d32;
-      color: #ffffff;
+      background-color: rgba(102, 187, 106, 0.8);
+      color: white;
     }
-
-    .available {
-      background-color: #33691e;
-    }
-
     .unavailable {
-      background-color: #b71c1c;
-      color: #ffcdd2;
+      background-color: #c62828;
+      color: #fff;
     }
-
-    form {
-      max-width: 600px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid #66bb6a;
-      border-radius: 10px;
+    .available {
+      background-color: #388e3c;
+      color: #fff;
     }
-
-    label {
-      display: block;
-      margin-top: 1rem;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-top: 0.5rem;
-      border-radius: 5px;
-      border: 1px solid #81c784;
-      background-color: #1b1b1b;
-      color: #ffffff;
-      font-weight: bold;
-    }
-
-    button {
-      margin-top: 1.5rem;
-      background-color: #66bb6a;
-      color: #0a0a0a;
-      font-size: 1rem;
-      font-weight: bold;
+    .btn {
+      background-color: #388e3c;
+      color: white;
       border: none;
       padding: 0.75rem 1.5rem;
       border-radius: 5px;
       cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #81c784;
-    }
-
-    .btn-back {
-      display: block;
-      width: fit-content;
-      margin: 3rem auto;
-      background-color: #66bb6a;
-      color: #0a0a0a;
+      font-size: 1rem;
       text-decoration: none;
-      padding: 0.75rem 1.5rem;
+    }
+    .btn:hover {
+      background-color: #2e7d32;
+    }
+    form {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      border: 2px solid #81c784;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 20px;
       border-radius: 5px;
+      border: 1px solid #66bb6a;
+      background-color: #e8f5e9;
+      color: #000;
       font-weight: bold;
     }
-
-    .btn-back:hover {
-      background-color: #81c784;
+    a {
+      color: #a5d6a7;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909590.png" alt="Grass Logo" />
+    <img src="https://cdn-icons-png.flaticon.com/512/766/766515.png" alt="Grass Logo">
     <h1>Availability – May 2025</h1>
     <p>Unavailable: Monday–Friday before 3 PM</p>
   </header>
@@ -186,9 +141,8 @@
     </tr>
   </table>
 
+  <h2>Request a Booking</h2>
   <form action="https://formspree.io/f/xovdygpn" method="POST">
-    <h2 style="text-align:center; color:#a5d6a7;">Request a Booking</h2>
-
     <label for="name">Your Name:</label>
     <input type="text" name="name" required>
 
@@ -196,7 +150,7 @@
     <input type="email" name="email" required>
 
     <label for="phone">Your Phone Number:</label>
-    <input type="tel" name="phone" required>
+    <input type="tel" name="phone" placeholder="e.g., 613-970-0092">
 
     <label for="preferred_date">Preferred Day & Time:</label>
     <input type="text" name="preferred_date" placeholder="e.g., Saturday evening" required>
@@ -204,12 +158,14 @@
     <label for="message">Additional Notes:</label>
     <textarea name="message" rows="4" placeholder="Optional..."></textarea>
 
-    <input type="hidden" name="_next" value="https://yourusername.github.io/thank-you.html">
+    <input type="hidden" name="_next" value="thank-you.html">
 
-    <button type="submit">Send Booking Request</button>
+    <button type="submit" class="btn">Send Booking Request</button>
   </form>
 
-  <a href="index.html" class="btn-back">← Back to Home</a>
-
+  <div style="text-align:center;">
+    <p>Need help? You can also call <a href="tel:6139700092">613-970-0092</a> or email <a href="mailto:izaiafreyer@gmail.com">izaiafreyer@gmail.com</a></p>
+    <a href="index.html" class="btn">← Back to Home</a>
+  </div>
 </body>
 </html>

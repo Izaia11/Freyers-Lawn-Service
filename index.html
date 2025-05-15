@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Freyer's Lawn Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f0fff0;
+      color: #2e7d32;
+    }
+    header {
+      background-color: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header img {
+      height: 80px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #66bb6a;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #4caf50;
+      display: inline-block;
+    }
+    .box {
+      background-color: #e8f5e9;
+      border: 2px solid #81c784;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 1.5rem;
+    }
+    footer {
+      background-color: #388e3c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .btn {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    .btn:hover {
+      background-color: #2e7d32;
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/184/184528.png" alt="Freyer's Lawn Service Logo" />
+    <h1>Freyer's Lawn Service</h1>
+    <p>Expert Lawn Mowing & Weed Wacking in Stittsville</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+    <a href="schedule.html">Book a Time</a>
+  </nav>
+
+  <section id="home">
+    <h2 class="section-title">Welcome</h2>
+    <div class="box">
+      <p>
+        Welcome to <strong>Freyer's Lawn Service</strong>! We’re a local lawn care business based in Stittsville, proudly offering expert mowing and weed wacking services to keep your property looking its best. As a hardworking local operation, we take pride in every yard we care for. Let us bring your lawn to life!
+      </p>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">What We Do</h2>
+    <div class="box">
+      <ul>
+        <li>🌱 Full lawn care (front, back, and sides)</li>
+        <li>✂️ Professional lawn mowing with clean edging</li>
+        <li>🧹 Weed wacking around sidewalks, fences, and borders</li>
+        <li>📍 Available throughout Stittsville</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2 class="section-title">Pricing</h2>
+    <div class="box">
+      <p><strong>$40–$50:</strong> Full lawn care (front, back, and sides)</p>
+      <p><strong>$20–$30:</strong> Front yard or back yard individually</p>
+      <p><em>Note: Final price may vary based on lawn size and condition. We inspect each lawn before confirming the total.</em></p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="box">
+      <p>📞 <strong>Phone:</strong> <a href="tel:6139700092">613-970-0092</a></p>
+      <p>📧 <strong>Email:</strong> <a href="mailto:izaiafreyer@gmail.com">izaiafreyer@gmail.com</a></p>
+      <p>📍 <strong>Service Area:</strong> Stittsville and surrounding neighborhoods</p>
+      <a class="btn" href="schedule.html">Book a Time</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Freyer's Lawn Service. All rights reserved.
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schedule – Freyer's Lawn Service</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0fff0;
+      color: #2e7d32;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #81c784;
+      text-align: center;
+      padding: 1rem;
+    }
+    th {
+      background-color: #66bb6a;
+      color: white;
+    }
+    .unavailable {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+      font-weight: bold;
+    }
+    .available {
+      background-color: #c8e6c9;
+      color: #1b5e20;
+    }
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .btn {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Availability – May 2025</h1>
+  <p style="text-align:center;">Unavailable: Monday–Friday before 3 PM</p>
+  <table>
+    <tr>
+      <th>Day</th>
+      <th>Morning</th>
+      <th>Afternoon</th>
+      <th>Evening</th>
+    </tr>
+    <tr>
+      <td>Monday</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td class="available">Available</td>
+      <td class="available">Available</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td class="available">Available</td>
+      <td class="available">Available</td>
+      <td class="available">Available</td>
+    </tr>
+  </table>
+
+  <a href="index.html" class="back btn">← Back to Home</a>
+</body>
+</html>

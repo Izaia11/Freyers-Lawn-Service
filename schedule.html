@@ -8,8 +8,8 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f0fff0;
-      color: #2e7d32;
+      background-color: #121212;
+      color: #a5d6a7;
       margin: 0;
       padding: 2rem;
       display: flex;
@@ -17,109 +17,119 @@
       align-items: center;
       min-height: 100vh;
     }
+
     h1 {
       text-align: center;
       margin-bottom: 1.5rem;
       font-weight: 500;
+      color: #66bb6a;
     }
+
     h2 {
       text-align: center;
       margin-top: 2.5rem;
       margin-bottom: 1rem;
       font-weight: 500;
-      color: #388e3c;
+      color: #81c784;
     }
+
     p.note {
       text-align: center;
       margin-bottom: 2rem;
       font-style: italic;
-      color: #4caf50;
+      color: #81c784;
     }
+
     form {
-      background: #e8f5e9;
+      background: #1e1e1e;
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 255, 0, 0.15);
       max-width: 600px;
       width: 100%;
       margin-bottom: 3rem;
     }
+
     form label {
       display: block;
       margin-bottom: 0.4rem;
       font-weight: 500;
-      color: #2e7d32;
+      color: #a5d6a7;
     }
+
     form input[type="text"],
     form input[type="email"],
     form textarea {
       width: 100%;
       padding: 10px;
-      border: 2px solid #81c784;
+      border: 2px solid #66bb6a;
       border-radius: 6px;
+      background-color: #222;
+      color: #e0f2f1;
       margin-bottom: 1.5rem;
       font-size: 1rem;
-      transition: border-color 0.3s;
     }
-    form input[type="text"]:focus,
-    form input[type="email"]:focus,
+
+    form input:focus,
     form textarea:focus {
-      border-color: #388e3c;
       outline: none;
+      border-color: #81c784;
     }
-    form textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
+
     .btn {
-      background-color: #388e3c;
-      color: white;
+      background-color: #66bb6a;
+      color: #121212;
       border: none;
       padding: 0.75rem 1.5rem;
       border-radius: 6px;
       cursor: pointer;
       font-size: 1.1rem;
       font-weight: 600;
-      transition: background-color 0.3s;
       width: 100%;
+      transition: background-color 0.3s;
     }
+
     .btn:hover {
-      background-color: #2e7d32;
+      background-color: #81c784;
     }
+
     table {
       width: 100%;
       max-width: 700px;
       border-collapse: collapse;
-      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
       border-radius: 12px;
       overflow: hidden;
+      margin-bottom: 2rem;
     }
+
     th, td {
-      border: 1px solid #81c784;
+      border: 1px solid #66bb6a;
       text-align: center;
       padding: 1rem;
-      background-color: #e8f5e9;
+      background-color: #1c1c1c;
     }
+
     th {
-      background-color: #66bb6a;
-      color: white;
-      font-weight: 600;
+      background-color: #2e7d32;
+      color: #ffffff;
     }
+
     .unavailable {
-      background-color: #ffcdd2;
-      color: #b71c1c;
+      background-color: #ff5252;
+      color: #ffffff;
       font-weight: 700;
     }
+
     .available {
-      background-color: #c8e6c9;
-      color: #1b5e20;
+      background-color: #43a047;
+      color: #ffffff;
       font-weight: 700;
     }
+
     .back {
       display: inline-block;
       text-align: center;
-      margin-top: 3rem;
-      background-color: #4caf50;
+      background-color: #388e3c;
       color: white;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
@@ -127,16 +137,36 @@
       text-decoration: none;
       transition: background-color 0.3s;
     }
+
     .back:hover {
-      background-color: #388e3c;
+      background-color: #66bb6a;
+      color: #121212;
     }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
     @media (max-width: 650px) {
       form, table {
         width: 100%;
       }
+
       th, td {
         padding: 0.75rem;
       }
+
       .btn {
         font-size: 1rem;
       }
@@ -144,7 +174,12 @@
   </style>
 </head>
 <body>
-  <h1>Availability – May 2025</h1>
+
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909590.png" alt="Blade of Grass Logo" />
+    <h1>Freyer's Lawn Service</h1>
+  </header>
+
   <p class="note">Unavailable: Monday–Friday before 3 PM</p>
 
   <h2>Request a Booking</h2>
@@ -220,5 +255,6 @@
   </table>
 
   <a href="index.html" class="back">← Back to Home</a>
+
 </body>
 </html>

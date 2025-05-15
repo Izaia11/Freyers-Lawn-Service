@@ -4,23 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Freyer's Lawn Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
 
     body {
-      font-family: 'Roboto', sans-serif;
       margin: 0;
-      background-color: #121212;
-      color: #a5d6a7;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      background: linear-gradient(to bottom, #0a0a0a, #1b5e20);
+      color: #ffffff;
     }
 
     header {
-      background-color: #1b5e20;
-      color: #a5d6a7;
+      background: linear-gradient(to right, #1b5e20, #2e7d32);
       text-align: center;
       padding: 2rem 1rem;
     }
@@ -31,9 +28,9 @@
     }
 
     nav {
+      background: linear-gradient(to right, #2e7d32, #388e3c);
       display: flex;
       justify-content: center;
-      background-color: #2e7d32;
       padding: 1rem;
       position: sticky;
       top: 0;
@@ -41,10 +38,9 @@
     }
 
     nav a {
-      color: white;
+      color: #ffffff;
       margin: 0 1.5rem;
       text-decoration: none;
-      font-weight: bold;
     }
 
     nav a:hover {
@@ -60,14 +56,14 @@
     .section-title {
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: #81c784;
       border-bottom: 3px solid #66bb6a;
       display: inline-block;
-      color: #81c784;
     }
 
     .box {
-      background-color: #1e1e1e;
-      border: 2px solid #66bb6a;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #81c784;
       border-radius: 10px;
       padding: 2rem;
       margin-top: 1.5rem;
@@ -75,22 +71,20 @@
 
     footer {
       background-color: #1b5e20;
-      color: #a5d6a7;
       text-align: center;
       padding: 1rem;
+      color: #a5d6a7;
     }
 
     .btn {
       background-color: #66bb6a;
-      color: #121212;
+      color: #0a0a0a;
       border: none;
       padding: 0.75rem 1.5rem;
       border-radius: 5px;
-      cursor: pointer;
       font-size: 1rem;
-      margin-top: 1rem;
       text-decoration: none;
-      font-weight: bold;
+      margin-top: 1rem;
       display: inline-block;
     }
 
@@ -98,17 +92,15 @@
       background-color: #81c784;
     }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-      }
+    a {
+      color: #81c784;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909590.png" alt="Freyer's Lawn Service Logo" />
+    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909590.png" alt="Grass Logo" />
     <h1>Freyer's Lawn Service</h1>
     <p>Expert Lawn Mowing & Weed Wacking in Stittsville</p>
   </header>
@@ -125,7 +117,7 @@
     <h2 class="section-title">Welcome</h2>
     <div class="box">
       <p>
-        Welcome to <strong>Freyer's Lawn Service</strong>! We’re a local lawn care business based in Stittsville, proudly offering expert mowing and weed wacking services to keep your property looking its best. As a hardworking local operation, we take pride in every yard we care for. Let us bring your lawn to life!
+        Welcome to <strong>Freyer's Lawn Service</strong>! We’re a local lawn care business based in Stittsville, proudly offering expert mowing and weed wacking services to keep your property looking its best. We take pride in every yard we care for.
       </p>
     </div>
   </section>
@@ -135,8 +127,8 @@
     <div class="box">
       <ul>
         <li>🌱 Full lawn care (front, back, and sides)</li>
-        <li>✂️ Professional lawn mowing with clean edging</li>
-        <li>🧹 Weed wacking around sidewalks, fences, and borders</li>
+        <li>✂️ Clean, sharp mowing with edge detailing</li>
+        <li>🧹 Weed wacking along sidewalks, fences, and gardens</li>
         <li>📍 Available throughout Stittsville</li>
       </ul>
     </div>
@@ -145,18 +137,18 @@
   <section id="pricing">
     <h2 class="section-title">Pricing</h2>
     <div class="box">
-      <p><strong>$40–$50:</strong> Full lawn care (front, back, and sides)</p>
-      <p><strong>$20–$30:</strong> Front yard or back yard individually</p>
-      <p><em>Note: Final price may vary based on lawn size and condition. We inspect each lawn before confirming the total.</em></p>
+      <p><strong>$40–$50:</strong> Full yard care</p>
+      <p><strong>$20–$30:</strong> Front or back yard only</p>
+      <p><em>Final price may vary by lawn size & condition</em></p>
     </div>
   </section>
 
   <section id="contact">
     <h2 class="section-title">Contact Us</h2>
     <div class="box">
-      <p>📞 <strong>Phone:</strong> <a href="tel:6139700092" style="color:#81c784;">613-970-0092</a></p>
-      <p>📧 <strong>Email:</strong> <a href="mailto:izaiafreyer@gmail.com" style="color:#81c784;">izaiafreyer@gmail.com</a></p>
-      <p>📍 <strong>Service Area:</strong> Stittsville and surrounding neighborhoods</p>
+      <p>📞 <strong>Phone:</strong> <a href="tel:6139700092">613-970-0092</a></p>
+      <p>📧 <strong>Email:</strong> <a href="mailto:izaiafreyer@gmail.com">izaiafreyer@gmail.com</a></p>
+      <p>📍 Stittsville and surrounding areas</p>
       <a class="btn" href="schedule.html">Book a Time</a>
     </div>
   </section>

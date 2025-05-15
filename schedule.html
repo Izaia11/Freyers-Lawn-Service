@@ -4,47 +4,221 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Schedule – Freyer's Lawn Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
   <style>
-    /* Your styles here (same as before) */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0fff0;
+      color: #2e7d32;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+      color: #388e3c;
+    }
+    p.note {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-style: italic;
+      color: #4caf50;
+    }
+    form {
+      background: #e8f5e9;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+      max-width: 600px;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: #2e7d32;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #81c784;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form textarea:focus {
+      border-color: #388e3c;
+      outline: none;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .btn {
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+    .btn:hover {
+      background-color: #2e7d32;
+    }
+    table {
+      width: 100%;
+      max-width: 700px;
+      border-collapse: collapse;
+      box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid #81c784;
+      text-align: center;
+      padding: 1rem;
+      background-color: #e8f5e9;
+    }
+    th {
+      background-color: #66bb6a;
+      color: white;
+      font-weight: 600;
+    }
+    .unavailable {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+      font-weight: 700;
+    }
+    .available {
+      background-color: #c8e6c9;
+      color: #1b5e20;
+      font-weight: 700;
+    }
+    .back {
+      display: inline-block;
+      text-align: center;
+      margin-top: 3rem;
+      background-color: #4caf50;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .back:hover {
+      background-color: #388e3c;
+    }
+    @media (max-width: 650px) {
+      form, table {
+        width: 100%;
+      }
+      th, td {
+        padding: 0.75rem;
+      }
+      .btn {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
   <h1>Availability – May 2025</h1>
-  <p style="text-align:center;">Unavailable: Monday–Friday before 3 PM</p>
+  <p class="note">Unavailable: Monday–Friday before 3 PM</p>
 
-  <h2 style="text-align:center; margin-top: 3rem;">Request a Booking</h2>
-  <form action="https://formspree.io/f/xovdygpn" method="POST" style="max-width:600px; margin:2rem auto;">
-    <!-- ✅ Success redirect -->
-    <input type="hidden" name="_next" value="https://yourusername.github.io/thank-you.html">
+  <h2>Request a Booking</h2>
+  <form action="https://formspree.io/f/xovdygpn" method="POST" novalidate>
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your full name" />
 
-    <label for="name">Your Name:</label><br>
-    <input type="text" name="name" required style="width:100%; padding:10px;"><br><br>
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Enter your email address" />
 
-    <label for="email">Your Email:</label><br>
-    <input type="email" name="email" required style="width:100%; padding:10px;"><br><br>
+    <label for="preferred_date">Preferred Day & Time:</label>
+    <input type="text" id="preferred_date" name="preferred_date" required placeholder="e.g., Saturday evening" />
 
-    <label for="date">Preferred Day & Time:</label><br>
-    <input type="text" name="preferred_date" placeholder="e.g., Saturday evening" required style="width:100%; padding:10px;"><br><br>
-
-    <label for="message">Additional Notes:</label><br>
-    <textarea name="message" rows="4" placeholder="Optional..." style="width:100%; padding:10px;"></textarea><br><br>
+    <label for="message">Additional Notes:</label>
+    <textarea id="message" name="message" placeholder="Optional..."></textarea>
 
     <button type="submit" class="btn">Send Booking Request</button>
   </form>
 
   <table>
-    <tr>
-      <th>Day</th>
-      <th>Morning</th>
-      <th>Afternoon</th>
-      <th>Evening</th>
-    </tr>
-    <tr><td>Monday</td><td class="unavailable">Unavailable</td><td class="unavailable">Unavailable</td><td class="available">Available</td></tr>
-    <tr><td>Tuesday</td><td class="unavailable">Unavailable</td><td class="unavailable">Unavailable</td><td class="available">Available</td></tr>
-    <!-- continue table -->
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Morning</th>
+        <th>Afternoon</th>
+        <th>Evening</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Monday</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td class="available">Available</td>
+        <td class="available">Available</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td class="available">Available</td>
+        <td class="available">Available</td>
+        <td class="available">Available</td>
+      </tr>
+    </tbody>
   </table>
 
-  <a href="index.html" class="back btn">← Back to Home</a>
+  <a href="index.html" class="back">← Back to Home</a>
 </body>
 </html>

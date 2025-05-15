@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schedule – Freyer's Lawn Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <style>
+    /* Your styles here (same as before) */
+  </style>
+</head>
+<body>
+  <h1>Availability – May 2025</h1>
+  <p style="text-align:center;">Unavailable: Monday–Friday before 3 PM</p>
+
+  <h2 style="text-align:center; margin-top: 3rem;">Request a Booking</h2>
+  <form action="https://formspree.io/f/xovdygpn" method="POST" style="max-width:600px; margin:2rem auto;">
+    <!-- ✅ Success redirect -->
+    <input type="hidden" name="_next" value="https://yourusername.github.io/thank-you.html">
+
+    <label for="name">Your Name:</label><br>
+    <input type="text" name="name" required style="width:100%; padding:10px;"><br><br>
+
+    <label for="email">Your Email:</label><br>
+    <input type="email" name="email" required style="width:100%; padding:10px;"><br><br>
+
+    <label for="date">Preferred Day & Time:</label><br>
+    <input type="text" name="preferred_date" placeholder="e.g., Saturday evening" required style="width:100%; padding:10px;"><br><br>
+
+    <label for="message">Additional Notes:</label><br>
+    <textarea name="message" rows="4" placeholder="Optional..." style="width:100%; padding:10px;"></textarea><br><br>
+
+    <button type="submit" class="btn">Send Booking Request</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>Day</th>
+      <th>Morning</th>
+      <th>Afternoon</th>
+      <th>Evening</th>
+    </tr>
+    <tr><td>Monday</td><td class="unavailable">Unavailable</td><td class="unavailable">Unavailable</td><td class="available">Available</td></tr>
+    <tr><td>Tuesday</td><td class="unavailable">Unavailable</td><td class="unavailable">Unavailable</td><td class="available">Available</td></tr>
+    <!-- continue table -->
+  </table>
+
+  <a href="index.html" class="back btn">← Back to Home</a>
+</body>
+</html>

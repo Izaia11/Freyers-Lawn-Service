@@ -4,109 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Schedule – Freyer's Lawn Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #121212;
-      color: #a5d6a7;
+      font-weight: bold;
       margin: 0;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
+      padding: 0;
+      background: linear-gradient(to bottom, #0a0a0a, #1b5e20);
+      color: #ffffff;
+    }
+
+    header {
+      background: linear-gradient(to right, #1b5e20, #2e7d32);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header img {
+      height: 80px;
+      margin-bottom: 1rem;
     }
 
     h1 {
       text-align: center;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-      color: #66bb6a;
-    }
-
-    h2 {
-      text-align: center;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      font-weight: 500;
-      color: #81c784;
-    }
-
-    p.note {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-style: italic;
-      color: #81c784;
-    }
-
-    form {
-      background: #1e1e1e;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 255, 0, 0.15);
-      max-width: 600px;
-      width: 100%;
-      margin-bottom: 3rem;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-weight: 500;
       color: #a5d6a7;
+      margin-top: 2rem;
     }
 
-    form input[type="text"],
-    form input[type="email"],
-    form textarea {
-      width: 100%;
-      padding: 10px;
-      border: 2px solid #66bb6a;
-      border-radius: 6px;
-      background-color: #222;
-      color: #e0f2f1;
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-    }
-
-    form input:focus,
-    form textarea:focus {
-      outline: none;
-      border-color: #81c784;
-    }
-
-    .btn {
-      background-color: #66bb6a;
-      color: #121212;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1.1rem;
-      font-weight: 600;
-      width: 100%;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #81c784;
+    p {
+      text-align: center;
+      color: #c8e6c9;
     }
 
     table {
-      width: 100%;
-      max-width: 700px;
+      width: 90%;
+      max-width: 900px;
+      margin: 2rem auto;
       border-collapse: collapse;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 2rem;
+      background: rgba(255, 255, 255, 0.05);
     }
 
     th, td {
-      border: 1px solid #66bb6a;
-      text-align: center;
+      border: 1px solid #81c784;
       padding: 1rem;
-      background-color: #1c1c1c;
+      text-align: center;
     }
 
     th {
@@ -114,147 +60,156 @@
       color: #ffffff;
     }
 
-    .unavailable {
-      background-color: #ff5252;
-      color: #ffffff;
-      font-weight: 700;
-    }
-
     .available {
-      background-color: #43a047;
+      background-color: #33691e;
+    }
+
+    .unavailable {
+      background-color: #b71c1c;
+      color: #ffcdd2;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #66bb6a;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #81c784;
+      background-color: #1b1b1b;
       color: #ffffff;
-      font-weight: 700;
+      font-weight: bold;
     }
 
-    .back {
-      display: inline-block;
-      text-align: center;
-      background-color: #388e3c;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    .back:hover {
+    button {
+      margin-top: 1.5rem;
       background-color: #66bb6a;
-      color: #121212;
+      color: #0a0a0a;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
-    header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
+    button:hover {
+      background-color: #81c784;
     }
 
-    header img {
-      height: 60px;
+    .btn-back {
+      display: block;
+      width: fit-content;
+      margin: 3rem auto;
+      background-color: #66bb6a;
+      color: #0a0a0a;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
     }
 
-    header h1 {
-      margin: 0;
-    }
-
-    @media (max-width: 650px) {
-      form, table {
-        width: 100%;
-      }
-
-      th, td {
-        padding: 0.75rem;
-      }
-
-      .btn {
-        font-size: 1rem;
-      }
+    .btn-back:hover {
+      background-color: #81c784;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909590.png" alt="Blade of Grass Logo" />
-    <h1>Freyer's Lawn Service</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/2909/2909590.png" alt="Grass Logo" />
+    <h1>Availability – May 2025</h1>
+    <p>Unavailable: Monday–Friday before 3 PM</p>
   </header>
 
-  <p class="note">Unavailable: Monday–Friday before 3 PM</p>
-
-  <h2>Request a Booking</h2>
-  <form action="https://formspree.io/f/xovdygpn" method="POST" novalidate>
-    <label for="name">Your Name:</label>
-    <input type="text" id="name" name="name" required placeholder="Enter your full name" />
-
-    <label for="email">Your Email:</label>
-    <input type="email" id="email" name="email" required placeholder="Enter your email address" />
-
-    <label for="preferred_date">Preferred Day & Time:</label>
-    <input type="text" id="preferred_date" name="preferred_date" required placeholder="e.g., Saturday evening" />
-
-    <label for="message">Additional Notes:</label>
-    <textarea id="message" name="message" placeholder="Optional..."></textarea>
-
-    <button type="submit" class="btn">Send Booking Request</button>
-  </form>
-
   <table>
-    <thead>
-      <tr>
-        <th>Day</th>
-        <th>Morning</th>
-        <th>Afternoon</th>
-        <th>Evening</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Monday</td>
-        <td class="unavailable">Unavailable</td>
-        <td class="unavailable">Unavailable</td>
-        <td class="available">Available</td>
-      </tr>
-      <tr>
-        <td>Tuesday</td>
-        <td class="unavailable">Unavailable</td>
-        <td class="unavailable">Unavailable</td>
-        <td class="available">Available</td>
-      </tr>
-      <tr>
-        <td>Wednesday</td>
-        <td class="unavailable">Unavailable</td>
-        <td class="unavailable">Unavailable</td>
-        <td class="available">Available</td>
-      </tr>
-      <tr>
-        <td>Thursday</td>
-        <td class="unavailable">Unavailable</td>
-        <td class="unavailable">Unavailable</td>
-        <td class="available">Available</td>
-      </tr>
-      <tr>
-        <td>Friday</td>
-        <td class="unavailable">Unavailable</td>
-        <td class="unavailable">Unavailable</td>
-        <td class="available">Available</td>
-      </tr>
-      <tr>
-        <td>Saturday</td>
-        <td class="available">Available</td>
-        <td class="available">Available</td>
-        <td class="available">Available</td>
-      </tr>
-      <tr>
-        <td>Sunday</td>
-        <td class="available">Available</td>
-        <td class="available">Available</td>
-        <td class="available">Available</td>
-      </tr>
-    </tbody>
+    <tr>
+      <th>Day</th>
+      <th>Morning</th>
+      <th>Afternoon</th>
+      <th>Evening</th>
+    </tr>
+    <tr>
+      <td>Monday</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="unavailable">Unavailable</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td class="available">Available</td>
+      <td class="available">Available</td>
+      <td class="available">Available</td>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td class="available">Available</td>
+      <td class="available">Available</td>
+      <td class="available">Available</td>
+    </tr>
   </table>
 
-  <a href="index.html" class="back">← Back to Home</a>
+  <form action="https://formspree.io/f/xovdygpn" method="POST">
+    <h2 style="text-align:center; color:#a5d6a7;">Request a Booking</h2>
+
+    <label for="name">Your Name:</label>
+    <input type="text" name="name" required>
+
+    <label for="email">Your Email:</label>
+    <input type="email" name="email" required>
+
+    <label for="phone">Your Phone Number:</label>
+    <input type="tel" name="phone" required>
+
+    <label for="preferred_date">Preferred Day & Time:</label>
+    <input type="text" name="preferred_date" placeholder="e.g., Saturday evening" required>
+
+    <label for="message">Additional Notes:</label>
+    <textarea name="message" rows="4" placeholder="Optional..."></textarea>
+
+    <input type="hidden" name="_next" value="https://yourusername.github.io/thank-you.html">
+
+    <button type="submit">Send Booking Request</button>
+  </form>
+
+  <a href="index.html" class="btn-back">← Back to Home</a>
 
 </body>
 </html>

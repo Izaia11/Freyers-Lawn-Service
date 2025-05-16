@@ -4,168 +4,215 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Schedule – Freyer's Lawn Service</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+    
     body {
       font-family: 'Roboto', sans-serif;
-      margin: 0;
-      background: linear-gradient(to bottom, #a5d6a7, #2e7d32, #000);
+      background: linear-gradient(to bottom, #2e7d32, #145214, #000000);
       color: white;
-      font-weight: bold;
+      margin: 0;
       padding: 2rem;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    header img {
-      height: 70px;
+      font-weight: 700;
     }
     h1, h2 {
       text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      margin-top: 3rem;
+      border-bottom: 3px solid #66bb6a;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+    p {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 2rem;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 3rem;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      box-shadow: 0 0 15px #1b5e20aa;
+      border-radius: 8px;
+      overflow: hidden;
     }
     th, td {
-      border: 1px solid #81c784;
+      border: 3px solid #4caf50;
+      padding: 1rem 0.75rem;
       text-align: center;
-      padding: 1rem;
     }
     th {
-      background-color: rgba(102, 187, 106, 0.8);
-      color: white;
-    }
-    .unavailable {
-      background-color: #c62828;
-      color: #fff;
-    }
-    .available {
       background-color: #388e3c;
-      color: #fff;
+      color: #e0f2f1;
+      font-weight: 700;
+      text-transform: uppercase;
     }
-    .btn {
-      background-color: #388e3c;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-      text-decoration: none;
+    td.available {
+      background-color: #1b5e20;
+      color: #a5d6a7;
     }
-    .btn:hover {
-      background-color: #2e7d32;
+    td.unavailable {
+      background-color: #b71c1c;
+      color: #ffcdd2;
+      font-weight: 700;
     }
     form {
-      background-color: rgba(255, 255, 255, 0.05);
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+      background-color: #1b5e20cc;
       padding: 2rem;
       border-radius: 10px;
-      max-width: 600px;
-      margin: 0 auto 3rem;
-      border: 2px solid #81c784;
+      box-shadow: 0 0 20px #4caf5088;
     }
-    input, textarea {
+    label {
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #d0f0c0;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      margin-bottom: 20px;
+      padding: 12px;
+      margin-bottom: 1.5rem;
+      border: none;
       border-radius: 5px;
-      border: 1px solid #66bb6a;
-      background-color: #e8f5e9;
-      color: #000;
-      font-weight: bold;
+      font-weight: 700;
+      font-size: 1rem;
+      background-color: #2e7d3211;
+      color: white;
     }
-    a {
+    input::placeholder,
+    textarea::placeholder {
+      color: #a5d6a7cc;
+      font-weight: 600;
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid #4caf50;
+      background-color: #2e7d3288;
+    }
+    .btn {
+      background-color: #4caf50;
+      color: #003300;
+      border: none;
+      padding: 0.85rem 1.8rem;
+      border-radius: 7px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+    .btn:hover {
+      background-color: #66bb6a;
+      color: #003300;
+    }
+    .back {
+      display: block;
+      max-width: 200px;
+      margin: 0 auto;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
       color: #a5d6a7;
+      padding: 0.5rem 1rem;
+      border: 2px solid #4caf50;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .back:hover {
+      background-color: #4caf50;
+      color: #003300;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/766/766515.png" alt="Grass Logo">
-    <h1>Availability – May 2025</h1>
-    <p>Unavailable: Monday–Friday before 3 PM</p>
-  </header>
+  <h1>Availability – May 2025</h1>
+  <p>Unavailable: Monday–Friday before 3 PM</p>
 
-  <table>
-    <tr>
-      <th>Day</th>
-      <th>Morning</th>
-      <th>Afternoon</th>
-      <th>Evening</th>
-    </tr>
-    <tr>
-      <td>Monday</td>
-      <td class="unavailable">Unavailable</td>
-      <td class="unavailable">Unavailable</td>
-      <td class="available">Available</td>
-    </tr>
-    <tr>
-      <td>Tuesday</td>
-      <td class="unavailable">Unavailable</td>
-      <td class="unavailable">Unavailable</td>
-      <td class="available">Available</td>
-    </tr>
-    <tr>
-      <td>Wednesday</td>
-      <td class="unavailable">Unavailable</td>
-      <td class="unavailable">Unavailable</td>
-      <td class="available">Available</td>
-    </tr>
-    <tr>
-      <td>Thursday</td>
-      <td class="unavailable">Unavailable</td>
-      <td class="unavailable">Unavailable</td>
-      <td class="available">Available</td>
-    </tr>
-    <tr>
-      <td>Friday</td>
-      <td class="unavailable">Unavailable</td>
-      <td class="unavailable">Unavailable</td>
-      <td class="available">Available</td>
-    </tr>
-    <tr>
-      <td>Saturday</td>
-      <td class="available">Available</td>
-      <td class="available">Available</td>
-      <td class="available">Available</td>
-    </tr>
-    <tr>
-      <td>Sunday</td>
-      <td class="available">Available</td>
-      <td class="available">Available</td>
-      <td class="available">Available</td>
-    </tr>
-  </table>
-
-  <h2>Request a Booking</h2>
   <form action="https://formspree.io/f/xovdygpn" method="POST">
+    <h2>Request a Booking</h2>
+
     <label for="name">Your Name:</label>
-    <input type="text" name="name" required>
+    <input type="text" name="name" required placeholder="Enter your full name" />
 
     <label for="email">Your Email:</label>
-    <input type="email" name="email" required>
+    <input type="email" name="email" required placeholder="you@example.com" />
 
     <label for="phone">Your Phone Number:</label>
-    <input type="tel" name="phone" placeholder="e.g., 613-970-0092">
+    <input type="text" name="phone" placeholder="Optional, but helpful" />
 
     <label for="preferred_date">Preferred Day & Time:</label>
-    <input type="text" name="preferred_date" placeholder="e.g., Saturday evening" required>
+    <input type="text" name="preferred_date" required placeholder="e.g., Saturday evening" />
 
     <label for="message">Additional Notes:</label>
     <textarea name="message" rows="4" placeholder="Optional..."></textarea>
 
-    <input type="hidden" name="_next" value="thank-you.html">
-
     <button type="submit" class="btn">Send Booking Request</button>
   </form>
 
-  <div style="text-align:center;">
-    <p>Need help? You can also call <a href="tel:6139700092">613-970-0092</a> or email <a href="mailto:izaiafreyer@gmail.com">izaiafreyer@gmail.com</a></p>
-    <a href="index.html" class="btn">← Back to Home</a>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Morning</th>
+        <th>Afternoon</th>
+        <th>Evening</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Monday</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Tuesday</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Wednesday</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Friday</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="unavailable">Unavailable</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Saturday</td>
+        <td class="available">Available</td>
+        <td class="available">Available</td>
+        <td class="available">Available</td>
+      </tr>
+      <tr>
+        <td>Sunday</td>
+        <td class="available">Available</td>
+        <td class="available">Available</td>
+        <td class="available">Available</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a href="index.html" class="back">← Back to Home</a>
 </body>
 </html>
+
